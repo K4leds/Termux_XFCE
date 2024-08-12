@@ -82,8 +82,7 @@ cp $HOME/../usr/var/lib/proot-distro/installed-rootfs/debian/etc/skel/.bashrc $H
 #Enable Sound
 echo "
 LD_PRELOAD=/system/lib64/libskcodec.so
-pulseaudio --start --exit-idle-time=-1
-pacmd load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1
+pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
 " > $HOME/.sound
 
 echo "
